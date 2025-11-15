@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+text-lg hover:underline{
+    transition: all 1s ease-in-out ;
+    
+}
+

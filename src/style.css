@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+body{
+
+    overflow-x: hidden;
+    font-family :Inter, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color:black;
+    color: white;
+}
