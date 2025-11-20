@@ -9,7 +9,7 @@ const Mode = () => {
   return (
     <>
       <Header />
-      <div style={{ width: '100%', minHeight: '100vh', position: 'relative', overflow: 'hidden' }} className="bg-black flex flex-col items-center justify-center pt-20">
+      <div style={{ width: '100%', minHeight: '100dvh', position: 'relative', overflow: 'hidden' }} className="bg-black flex flex-col items-center justify-start pt-40">
         <LightRays
           raysOrigin="center"
           raysColor="#fbbf24"
@@ -35,7 +35,7 @@ const Mode = () => {
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-black shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Profile"
+                alt="Ajaikumar E"
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
             </div>
@@ -50,7 +50,7 @@ const Mode = () => {
             <h2 className="text-xl md:text-2xl text-amber-400 font-medium mb-2 tracking-wider">HELLO, I'M</h2>
             <div className="h-16 md:h-24 flex items-center justify-center">
               <TextType
-                text="CREATIVE DEVELOPER"
+                text={["AJAIKUMAR E", "SOFTWARE ENGINEER", "FULL STACK DEV"]}
                 as="h1"
                 className="text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400"
                 typingSpeed={100}
@@ -62,8 +62,8 @@ const Mode = () => {
               />
             </div>
             <p className="text-gray-400 max-w-xl mx-auto mt-4 text-lg leading-relaxed">
-              Crafting digital experiences with code and creativity.
-              Specializing in building exceptional web applications.
+              Aspiring Software Engineer with expertise in MERN stack, IoT, and Machine Learning.
+              Building scalable, human-centered tech solutions.
             </p>
 
             <motion.div

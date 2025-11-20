@@ -26,7 +26,7 @@ const Contact = () => {
                         <h3 className="text-2xl font-semibold mb-6">Let's Talk</h3>
                         <p className="text-gray-400 mb-8">
                             I'm currently open to new opportunities and collaborations.
-                            Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                            Feel free to reach out to me via email or phone.
                         </p>
 
                         <div className="space-y-6">
@@ -36,17 +36,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-medium text-gray-200">Email</h4>
-                                    <p className="text-gray-400">hello@example.com</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start space-x-4">
-                                <div className="p-3 bg-amber-500/10 rounded-lg text-amber-500">
-                                    <FiMapPin className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <h4 className="text-lg font-medium text-gray-200">Location</h4>
-                                    <p className="text-gray-400">San Francisco, CA</p>
+                                    <a href="mailto:kumarajai914@gmail.com" className="text-gray-400 hover:text-amber-400 transition-colors">kumarajai914@gmail.com</a>
                                 </div>
                             </div>
 
@@ -56,7 +46,17 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h4 className="text-lg font-medium text-gray-200">Phone</h4>
-                                    <p className="text-gray-400">+1 (555) 123-4567</p>
+                                    <a href="tel:+916380596859" className="text-gray-400 hover:text-amber-400 transition-colors">+91 6380596859</a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start space-x-4">
+                                <div className="p-3 bg-amber-500/10 rounded-lg text-amber-500">
+                                    <FiMapPin className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-medium text-gray-200">Location</h4>
+                                    <p className="text-gray-400">India</p>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@ const Contact = () => {
                                         type="text"
                                         id="name"
                                         className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all text-white"
-                                        placeholder="John Doe"
+                                        placeholder="Your Name"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -86,7 +86,7 @@ const Contact = () => {
                                         type="email"
                                         id="email"
                                         className="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all text-white"
-                                        placeholder="john@example.com"
+                                        placeholder="your@email.com"
                                     />
                                 </div>
                             </div>

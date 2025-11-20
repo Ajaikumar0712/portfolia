@@ -4,26 +4,18 @@ import { motion } from 'framer-motion';
 const projectsData = [
     {
         id: 1,
-        title: 'E-Commerce Platform',
-        description: 'A full-stack e-commerce solution with real-time inventory management and secure payment gateway integration.',
-        tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        title: 'Recipe Sharing Platform',
+        description: 'Built a full-stack web application using MERN stack (MongoDB, Express.js, React.js, Node.js). Implemented user authentication, secure login/signup, and enabled CRUD operations for user-generated recipes. Created a responsive and intuitive UI for easy browsing and sharing.',
+        tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Auth'],
+        image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
         link: '#',
     },
     {
         id: 2,
-        title: 'Task Management App',
-        description: 'A collaborative task management tool with drag-and-drop interface and team real-time updates.',
-        tags: ['Vue.js', 'Firebase', 'Tailwind CSS'],
-        image: 'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        link: '#',
-    },
-    {
-        id: 3,
-        title: 'AI Content Generator',
-        description: 'An AI-powered application that generates marketing copy and social media posts using OpenAI API.',
-        tags: ['React', 'Python', 'FastAPI', 'OpenAI'],
-        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        title: 'RAG for Document Q&A',
+        description: 'Built an AI-powered document Q&A system using RAG architecture. Processed and chunked PDF documents to generate embeddings stored in a FAISS index. Developed an interactive Streamlit web app enabling real-time question answering using Gemini/OpenAI models.',
+        tags: ['Python', 'LangChain', 'FAISS', 'Streamlit', 'Gemini API'],
+        image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
         link: '#',
     },
 ];
@@ -40,7 +32,7 @@ const Projects = () => {
                 >
                     Featured Projects
                 </motion.h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {projectsData.map((project, index) => (
                         <motion.div
                             key={project.id}
@@ -66,7 +58,7 @@ const Projects = () => {
                             </div>
                             <div className="p-6">
                                 <h3 className="text-xl font-bold mb-2 text-white group-hover:text-amber-400 transition-colors">{project.title}</h3>
-                                <p className="text-gray-400 mb-4 text-sm line-clamp-3">{project.description}</p>
+                                <p className="text-gray-400 mb-4 text-sm line-clamp-4">{project.description}</p>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag) => (
                                         <span key={tag} className="px-3 py-1 bg-gray-800 text-gray-300 text-xs rounded-full border border-gray-700">

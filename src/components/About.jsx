@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
-  { name: 'HTML', level: 95 },
-  { name: 'CSS', level: 90 },
+  { name: 'Python', level: 90 },
   { name: 'JavaScript', level: 85 },
-  { name: 'React', level: 88 },
-  { name: 'Tailwind CSS', level: 92 },
-  { name: 'Vite', level: 80 },
+  { name: 'React.js', level: 88 },
+  { name: 'Node.js', level: 80 },
+  { name: 'MongoDB', level: 75 },
+  { name: 'Machine Learning', level: 70 },
 ];
 
 const About = () => {
@@ -30,20 +30,27 @@ const About = () => {
             About Me
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                I am a passionate and creative frontend developer with a love for building beautiful and functional web applications.
-                I have a strong foundation in modern web technologies and a keen eye for detail.
+                I am a motivated and detail-oriented Aspiring Software Engineer with hands-on experience in full-stack web development, IoT-enabled systems, and real-time offline communication platforms.
               </p>
               <p>
-                My goal is to create seamless user experiences and to continuously learn and adapt to new technologies.
-                I am always excited to take on new challenges and to collaborate with others to bring ideas to life.
+                Currently pursuing B.Tech in Information Technology at Prathyusha Engineering College (2022-2026) with a CGPA of 7.9. I have a growing foundation in Machine Learning and am committed to building scalable, human-centered tech solutions.
               </p>
+              <div className="pt-4">
+                <h4 className="text-amber-400 font-semibold mb-2">Experience</h4>
+                <p className="font-medium text-white">Machine Learning Intern — LearnNex</p>
+                <p className="text-sm text-gray-500">Jul 2025 - Sep 2025</p>
+                <ul className="list-disc list-inside text-sm text-gray-400 mt-2 space-y-1">
+                  <li>Built ML projects using Python, Pandas, NumPy and scikit-learn.</li>
+                  <li>Gained hands-on experience in data preprocessing and model creation.</li>
+                </ul>
+              </div>
             </div>
 
             <div className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold mb-6 text-white">My Skills</h3>
+              <h3 className="text-2xl font-bold mb-6 text-white">Technical Skills</h3>
               <div className="space-y-4">
                 {skills.map((skill, index) => (
                   <div key={skill.name}>
@@ -62,6 +69,11 @@ const About = () => {
                   </div>
                 ))}
               </div>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {['Tailwind CSS', 'GSAP', 'N8N', 'Git', 'Linux', 'NLP', 'Figma'].map(skill => (
+                  <span key={skill} className="px-3 py-1 bg-gray-800 text-gray-400 text-xs rounded-full border border-gray-700">{skill}</span>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
@@ -71,4 +83,3 @@ const About = () => {
 };
 
 export default About;
-

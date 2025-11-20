@@ -31,10 +31,13 @@ const getAnchorAndDir = (origin, w, h) => {
       return { anchor: [0.5 * w, (1 + outside) * h], dir: [0, -1] };
     case "bottom-right":
       return { anchor: [w, (1 + outside) * h], dir: [0, -1] };
+    case "center":
+      return { anchor: [0.5 * w, 0.5 * h], dir: [0, 1] };
     default: // "top-center"
       return { anchor: [0.5 * w, -outside * h], dir: [0, 1] };
   }
 };
+
 
 const LightRays = ({
   raysOrigin = "top-center",
@@ -405,8 +408,9 @@ void main() {
   return (
     <div
       ref={containerRef}
-      className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative ${className}`.trim()}
+      className={`w-full h-full pointer-events-none overflow-hidden relative ${className}`.trim()}
     />
+
   );
 };
 
