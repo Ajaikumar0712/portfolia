@@ -4,26 +4,37 @@ import Header from './Header';
 import TextType from './lib/TextType';
 import { motion } from 'framer-motion';
 
-
 const Mode = () => {
   return (
     <>
       <Header />
-      <div style={{ width: '100%', minHeight: '100dvh', position: 'relative', overflow: 'hidden' }} className="bg-black flex flex-col items-center justify-start pt-40">
+      <div 
+        style={{ 
+          width: '100vw', 
+          height: '100vh', 
+          position: 'relative', 
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }} 
+        className="bg-black"
+      >
         <LightRays
           raysOrigin="center"
           raysColor="#fbbf24"
-          raysSpeed={0.5}
-          lightSpread={0.6}
-          rayLength={0.8}
+          raysSpeed={1}
+          lightSpread={2}
+          rayLength={1.5}
           followMouse={true}
-          mouseInfluence={0.2}
+          mouseInfluence={0.3}
           noiseAmount={0.05}
           distortion={0.1}
           className="custom-rays absolute inset-0 z-0 opacity-40"
         />
 
-        <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl px-4">
+        <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4">
           {/* Centered Photo Container */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -70,7 +81,7 @@ const Mode = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="mt-8 flex gap-4 justify-center"
+              className="mt-8 flex gap-4 justify-center flex-wrap"
             >
               <a href="#projects" className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors duration-300">
                 View Work

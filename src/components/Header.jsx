@@ -48,12 +48,13 @@ const Header = () => {
                             <li><a href="#contact" className="text-lg hover:text-amber-500 transition-colors">Contact</a></li>
                         </ul>
 
+
                         {/* Social Icons and Hire Me Button */}
                         <div className='hidden md:flex items-center space-x-4 pr-4'>
-                            <a href="#" aria-label="GitHub Profile">
+                            <a href="https://github.com/Ajaikumar0712" aria-label="GitHub Profile">
                                 <FiGithub className='w-5 h-5 hover:text-amber-500 transition-colors' />
                             </a>
-                            <a href="#" aria-label="LinkedIn Profile">
+                            <a href="https://www.linkedin.com/in/ajaikumar2606/" aria-label="LinkedIn Profile">
                                 <FaLinkedin className='w-5 h-5 hover:text-amber-500 transition-colors' />
                             </a>
                             <a href="#contact" className="bg-amber-700 text-white px-6 py-2 rounded-full hover:bg-amber-600 hover:scale-105 transition-all duration-300 text-sm font-semibold">
