@@ -1,14 +1,32 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-tilt: tilt 10s infinite linear;
+  
+  @keyframes tilt {
+    0%, 50%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(1deg);
+    }
+    75% {
+      transform: rotate(-1deg);
+    }
+  }
+}
 
-body{
-
+body {
     overflow-x: hidden;
-    font-family :Inter, sans-serif;
+    font-family: Inter, sans-serif;
     width: 100%;
     margin: 0;
     padding: 0;
     position: relative;
-    background-color:black;
+    background-color: black;
     color: white;
+}
+
+html {
+  scroll-behavior: smooth;
 }
