@@ -5,8 +5,8 @@ import { FiGithub, FiLinkedin, FiTwitter, FiInstagram } from 'react-icons/fi';
 const socialLinks = [
     { icon: FiGithub, href: 'https://github.com/Ajaikumar0712', label: 'GitHub' },
     { icon: FiLinkedin, href: 'https://www.linkedin.com/in/ajaikumar2606/', label: 'LinkedIn' },
-    { icon: FiTwitter, href: '#', label: 'Twitter' },
-    { icon: FiInstagram, href: '#', label: 'Instagram' },
+    { icon: FiTwitter, href: 'https://x.com/ugly96875', label: 'Twitter' },
+    { icon: FiInstagram, href: 'https://www.instagram.com/sweiiiii__3026/', label: 'Instagram' },
 ];
 
 const Footer = () => {

@@ -1,9 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const form = useRef();
     const [focusedField, setFocusedField] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        // EmailJS configuration - YOU NEED TO REPLACE THESE WITH YOUR OWN VALUES
+        const SERVICE_ID = 'service_ul2gp3t';  // Replace with your EmailJS service ID
+        const TEMPLATE_ID = 'template_7yyvow8'; // Replace with your EmailJS template ID  
+        const PUBLIC_KEY = 'lj1B-cE_V1vOO82Uh';   // Replace with your EmailJS public key
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then((result) => {
+                console.log('Email sent successfully:', result.text);
+                setSubmitStatus('success');
+                setIsSubmitting(false);
+                form.current.reset(); // Clear the form
+
+                // Clear success message after 5 seconds
+                setTimeout(() => setSubmitStatus(null), 5000);
+            }, (error) => {
+                console.error('Email send error:', error.text);
+                setSubmitStatus('error');
+                setIsSubmitting(false);
+
+                // Clear error message after 5 seconds
+                setTimeout(() => setSubmitStatus(null), 5000);
+            });
+    };
 
     return (
         <section id="contact" className="py-20 bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
@@ -118,7 +151,7 @@ const Contact = () => {
                         {/* Gradient overlay on hover */}
                         <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                        <form className="space-y-6 relative z-10">
+                        <form ref={form} onSubmit={handleSubmit} className="space-y-6 relative z-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Name Input */}
                                 <div className="space-y-2">
@@ -126,6 +159,8 @@ const Contact = () => {
                                     <motion.input
                                         type="text"
                                         id="name"
+                                        name="from_name"
+                                        required
                                         onFocus={() => setFocusedField('name')}
                                         onBlur={() => setFocusedField(null)}
                                         whileFocus={{ scale: 1.01 }}
@@ -141,6 +176,8 @@ const Contact = () => {
                                     <motion.input
                                         type="email"
                                         id="email"
+                                        name="from_email"
+                                        required
                                         onFocus={() => setFocusedField('email')}
                                         onBlur={() => setFocusedField(null)}
                                         whileFocus={{ scale: 1.01 }}
@@ -157,6 +194,8 @@ const Contact = () => {
                                 <motion.input
                                     type="text"
                                     id="subject"
+                                    name="subject"
+                                    required
                                     onFocus={() => setFocusedField('subject')}
                                     onBlur={() => setFocusedField(null)}
                                     whileFocus={{ scale: 1.01 }}
@@ -171,7 +210,9 @@ const Contact = () => {
                                 <label htmlFor="message" className="text-sm font-medium text-gray-300">Message</label>
                                 <motion.textarea
                                     id="message"
+                                    name="message"
                                     rows="5"
+                                    required
                                     onFocus={() => setFocusedField('message')}
                                     onBlur={() => setFocusedField(null)}
                                     whileFocus={{ scale: 1.01 }}
@@ -184,17 +225,40 @@ const Contact = () => {
                             {/* Submit Button */}
                             <motion.button
                                 type="submit"
+                                disabled={isSubmitting}
                                 whileHover={{
-                                    scale: 1.02,
-                                    boxShadow: "0 0 30px rgba(251, 191, 36, 0.4)"
+                                    scale: isSubmitting ? 1 : 1.02,
+                                    boxShadow: isSubmitting ? "" : "0 0 30px rgba(251, 191, 36, 0.4)"
                                 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-lg hover:from-amber-700 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-amber-900/30 relative overflow-hidden group"
+                                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                                className={`w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-bold rounded-lg transition-all duration-300 shadow-lg shadow-amber-900/30 relative overflow-hidden group ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:from-amber-700 hover:to-orange-700'}`}
                             >
-                                <span className="relative z-10">Send Message</span>
+                                <span className="relative z-10">
+                                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                                </span>
                                 {/* Shimmer effect */}
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                             </motion.button>
+
+                            {/* Success/Error Messages */}
+                            {submitStatus === 'success' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-center"
+                                >
+                                    ✓ Message sent successfully! I'll get back to you soon.
+                                </motion.div>
+                            )}
+                            {submitStatus === 'error' && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-center"
+                                >
+                                    ✗ Failed to send message. Please try again or email me directly.
+                                </motion.div>
+                            )}
                         </form>
                     </motion.div>
                 </div>
