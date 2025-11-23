@@ -1,32 +1,156 @@
 @import "tailwindcss";
 
+/* stylelint-disable-next-line */
 @theme {
   --animate-tilt: tilt 10s infinite linear;
-  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-pulse-slow: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+
   @keyframes tilt {
-    0%, 50%, 100% {
+
+    0%,
+    50%,
+    100% {
       transform: rotate(0deg);
     }
+
     25% {
       transform: rotate(1deg);
     }
+
     75% {
       transform: rotate(-1deg);
     }
   }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+    }
+
+    to {
+      box-shadow: 0 0 30px rgba(251, 191, 36, 0.8), 0 0 40px rgba(251, 191, 36, 0.4);
+    }
+  }
+
+  @keyframes pulse-slow {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+}
+
+/* CSS Variables for theming */
+:root {
+  --primary-amber: #fbbf24;
+  --primary-orange: #f97316;
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --border-glass: rgba(255, 255, 255, 0.1);
 }
 
 body {
-    overflow-x: hidden;
-    font-family: Inter, sans-serif;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    background-color: black;
-    color: white;
+  overflow-x: hidden;
+  font-family: Inter, sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: black;
+  color: white;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-left: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fbbf24, #f97316);
+  border-radius: 10px;
+  border: 2px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fcd34d, #fb923c);
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: rgba(251, 191, 36, 0.3);
+  color: #fcd34d;
+}
+
+::-moz-selection {
+  background-color: rgba(251, 191, 36, 0.3);
+  color: #fcd34d;
+}
+
+/* Glassmorphism Utility Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button,
+input,
+textarea {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary-amber);
+  outline-offset: 2px;
 }
