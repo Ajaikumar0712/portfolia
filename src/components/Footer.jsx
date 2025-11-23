@@ -11,9 +11,9 @@ const socialLinks = [
 
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-b from-gray-900 to-black py-8 border-t border-gray-800/50 relative overflow-hidden h-20">
+        <footer className="bg-gradient-to-b from-gray-900 to-black py-8 border-t border-gray-800/50 relative overflow-visible">
             {/* Subtle animated gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-orange-500/5 opacity   " />
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-orange-500/5 opacity-50" />
 
             <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center relative z-10">
                 <motion.div
@@ -79,7 +79,7 @@ const Footer = () => {
                     y: -5,
                     boxShadow: "0 0 20px rgba(251, 191, 36, 0.4)"
                 }}
-                className="absolute right-8 -top-10 bg-gradient-to-r from-amber-600 to-orange-600 p-3 rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transition-all group "
+                className="absolute right-4 md:right-8 -top-6 bg-gradient-to-r from-amber-600 to-orange-600 p-3 rounded-full shadow-lg hover:from-amber-700 hover:to-orange-700 transition-all group z-20"
                 aria-label="Scroll to top"
             >
                 <svg className="w-5 h-5 text-white group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
