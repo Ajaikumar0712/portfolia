@@ -10,9 +10,7 @@ const education = [
         cgpa: '7.9',
         highlights: [
             'Specialization in Web Development and Machine Learning',
-            'Active member of Technical Club',
             'Completed multiple real-world projects',
-            'Strong foundation in Data Structures & Algorithms'
         ],
         icon: 'university'
     },
@@ -21,11 +19,9 @@ const education = [
         institution: 'St.Pauls Higher Secondary School',
         location: 'Neyveli, Tamil Nadu',
         period: '2020 - 2022',
-        percentage: '85%',
+        percentage: '79%',
         highlights: [
-            
-            'Top performer in Mathematics',
-            
+            'Top performer in Mathematics'
         ],
         icon: 'school'
     }
@@ -136,7 +132,7 @@ const Education = () => {
                                                         {edu.period}
                                                     </div>
                                                     <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-black font-bold px-4 py-2 rounded-lg">
-                                                        CGPA: {edu.cgpa}
+                                                        {edu.cgpa ? `CGPA: ${edu.cgpa}` : `Percentage: ${edu.percentage}`}
                                                     </div>
                                                 </div>
                                             </div>
