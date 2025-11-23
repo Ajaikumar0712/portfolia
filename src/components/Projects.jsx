@@ -8,7 +8,7 @@ const projectsData = [
         description: 'Built a full-stack web application using MERN stack (MongoDB, Express.js, React.js, Node.js). Implemented user authentication, secure login/signup, and enabled CRUD operations for user-generated recipes. Created a responsive and intuitive UI for easy browsing and sharing.',
         tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Auth'],
         image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        link: '#',
+        link: 'https://github.com/Ajaikumar0712/recipe-sharing-platform',
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const projectsData = [
         description: 'Built an AI-powered document Q&A system using RAG architecture. Processed and chunked PDF documents to generate embeddings stored in a FAISS index. Developed an interactive Streamlit web app enabling real-time question answering using Gemini/OpenAI models.',
         tags: ['Python', 'LangChain', 'FAISS', 'Streamlit', 'Gemini API'],
         image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-        link: '#',
+        link: 'https://github.com/Ajaikumar0712/RAG',
     },
 ];
 
