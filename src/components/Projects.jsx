@@ -7,7 +7,7 @@ const projectsData = [
         title: 'Recipe Sharing Platform',
         description: 'Built a full-stack web application using MERN stack (MongoDB, Express.js, React.js, Node.js). Implemented user authentication, secure login/signup, and enabled CRUD operations for user-generated recipes. Created a responsive and intuitive UI for easy browsing and sharing.',
         tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Auth'],
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+        image: '/img/recp.avif',
         link: 'https://github.com/Ajaikumar0712/recipe-sharing-platform',
     },
     {
