@@ -154,3 +154,36 @@ textarea {
   outline: 2px solid var(--primary-amber);
   outline-offset: 2px;
 }
+
+/* Performance Optimizations */
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize animations with will-change */
+.animate-tilt,
+.animate-pulse-slow,
+.animate-shimmer {
+  will-change: transform, opacity;
+}
+
+/* Contain layout shifts */
+img {
+  content-visibility: auto;
+}
+
+/* GPU acceleration for transforms */
+.glass,
+.glass-dark {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

@@ -18,14 +18,14 @@ const education = [
     },
     {
         degree: 'Higher Secondary (XII)',
-        institution: 'Your School Name',
-        location: 'City, State',
+        institution: 'St.Pauls Higher Secondary School',
+        location: 'Neyveli, Tamil Nadu',
         period: '2020 - 2022',
-        cgpa: '85%',
+        percentage: '85%',
         highlights: [
-            'Science Stream with Computer Science',
+            
             'Top performer in Mathematics',
-            'Participated in coding competitions'
+            
         ],
         icon: 'school'
     }

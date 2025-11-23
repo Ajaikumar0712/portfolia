@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 
 const skills = [
@@ -181,4 +181,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default memo(Skills);
