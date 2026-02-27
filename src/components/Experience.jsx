@@ -5,18 +5,30 @@ const experiences = [
     {
         title: 'Machine Learning Intern',
         company: 'LearnNex',
-        period: 'Jul 2025 - Sep 2025',
+        period: 'Jul 2025 – Sep 2025',
         type: 'Internship',
         description: [
-            'Built ML projects using Python, Pandas, NumPy and scikit-learn',
-            'Gained hands-on experience in data preprocessing and model creation',
-            'Developed predictive models with 85% accuracy on test datasets',
-            'Collaborated with cross-functional teams on ML implementation'
+            'Built end-to-end ML pipelines using Python, Pandas, NumPy and scikit-learn for real-world datasets',
+            'Performed data preprocessing, feature engineering, and model evaluation on structured data',
+            'Developed predictive models achieving 85% accuracy on held-out test datasets',
+            'Collaborated with cross-functional teams to integrate ML models into product workflows',
+            'Documented experiments and model performance metrics using Jupyter Notebook & Google Colab',
         ],
-        icon: 'briefcase',
-        color: 'amber'
+        tags: ['Python', 'scikit-learn', 'Pandas', 'NumPy', 'Jupyter Notebook', 'Google Colab'],
     },
-    // Add more experiences here as needed
+    {
+        title: 'Next Gen Intern',
+        company: 'EY GDS (Ernst & Young Global Delivery Services)',
+        period: 'Feb 2025 – Mar 2025',
+        type: 'Internship',
+        description: [
+            'Selected for a competitive internship program focused on enterprise-grade software development',
+            'Worked on MERN stack-based project workflows following professional development standards',
+            'Collaborated in structured project planning, orientation, and execution phases',
+            'Applied best practices in full-stack development and collaborative software delivery',
+        ],
+        tags: ['MERN Stack', 'MongoDB', 'Express.js', 'React.js', 'Node.js', 'Agile'],
+    },
 ];
 
 const Experience = () => {
@@ -24,31 +36,8 @@ const Experience = () => {
         <section id="experience" className="py-20 bg-black text-white relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.2, 0.4, 0.2],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                    className="absolute top-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.2, 0.4, 0.2],
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: 1
-                    }}
-                    className="absolute bottom-20 right-20 w-80 h-80 bg-green-500/10 rounded-full blur-3xl"
-                />
+                <div className="absolute top-20 left-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-20 right-20 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
@@ -123,7 +112,7 @@ const Experience = () => {
                                             </div>
 
                                             {/* Description */}
-                                            <ul className="space-y-2 text-gray-300">
+                                            <ul className="space-y-2 text-gray-300 mb-5">
                                                 {exp.description.map((item, i) => (
                                                     <motion.li
                                                         key={i}
@@ -140,6 +129,20 @@ const Experience = () => {
                                                     </motion.li>
                                                 ))}
                                             </ul>
+
+                                            {/* Tech Tags */}
+                                            {exp.tags && (
+                                                <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-700/50">
+                                                    {exp.tags.map((tag) => (
+                                                        <span
+                                                            key={tag}
+                                                            className="px-2.5 py-1 text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded-full"
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            )}
                                         </div>
                                     </motion.div>
 
